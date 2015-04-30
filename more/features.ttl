@@ -1,0 +1,40 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix gml: <http://www.opengis.net/ont/gml#> .
+@prefix epsg: <http://www.opengis.net/def/crs/EPSG/0/> .
+
+#Features
+
+<http://ibr.spatialhumanities.de/ibr/rest/Gamma/features/726>	
+  a geo:SpatialObject, geo:Feature ;
+  dcterms:creator "thiery.florian@gmail.com" ;
+  dcterms:date "2014-07-10T18:59:26Z"^^xsd:dateTime ;
+  dcterms:licence <http://creativecommons.org/licenses/by/4.0> ;
+  geo:hasGeometry [
+    a sf:MultiPolygon ;
+    geo:asWKT "epsg:0 MULTIPOLYGONMULTIPOLYGON(((-2.63066101074219 1.97898864746094 -1.71272277832031,-1.89738464355469 2.58241271972656 -1.71357727050781,-1.89656066894531 2.57313537597656 0.378372192382812,-2.63066101074219 1.97898864746094 -1.71272277832031)),((-2.63066101074219 1.97898864746094 -1.71272277832031,-1.89656066894531 2.57313537597656 0.378372192382812,-2.62882995605469 1.96873474121094 0.378311157226562,-2.63066101074219 1.97898864746094 -1.71272277832031)))"^^geo:wktLiteral
+  ] .
+
+<http://ibr.spatialhumanities.de/ibr/rest/Gamma/features/746>	
+  a geo:SpatialObject, geo:Feature ;
+  dcterms:creator "thiery.florian@gmail.com" ;
+  dcterms:date "2014-07-13T16:53:26Z"^^xsd:dateTime ;
+  dcterms:licence <http://creativecommons.org/licenses/by/4.0> ;
+  geo:hasGeometry [
+    a sf:MultiPolygon ;
+    geo:asWKT "epsg:0 MULTIPOLYGON(((-0.405044555664062 3.12150573730469 -1.68061828613281,0.0781707763671875 1.20515441894531 -0.823196411132812,0.185806274414062 2.38838195800781 0.375961303710938,-0.405044555664062 3.12150573730469 -1.68061828613281)),((-0.405044555664062 3.12150573730469 -1.68061828613281,0.185806274414062 2.38838195800781 0.375961303710938,-0.410934448242188 3.02531433105469 0.376968383789062,-0.405044555664062 3.12150573730469 -1.68061828613281)))"^^geo:wktLiteral
+  ] .
+  
+<http://ibr.spatialhumanities.de/ibr/rest/Gamma/features/747>	
+  a geo:SpatialObject, geo:Feature ;
+  dcterms:creator "thiery.florian@gmail.com" ;
+  dcterms:date "2014-07-23T16:54:22Z"^^xsd:dateTime ;
+  dcterms:licence <http://creativecommons.org/licenses/by/4.0> ;
+  geo:hasGeometry [
+    a sf:MultiPolygon ;
+    geo:asWKT "epsg:0 MULTIPOLYGON(((-0.0823516845703125 -1.18928527832031 1.63328552246094,1.49705505371094 0.118820190429688 1.63938903808594,1.76042175292969 -0.153305053710938 1.63594055175781,-0.0823516845703125 -1.18928527832031 1.63328552246094)),((1.76042175292969 -0.153305053710938 1.63594055175781,0.103134155273438 -1.48591613769531 1.63011169433594,-0.0823516845703125 -1.18928527832031 1.63328552246094,1.76042175292969 -0.153305053710938 1.63594055175781)))"^^geo:wktLiteral
+  ] .

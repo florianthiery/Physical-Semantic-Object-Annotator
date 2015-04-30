@@ -1,0 +1,46 @@
+# Lampen-Features
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+   SELECT ?feature WHERE {
+   ?blanknode skos:relatedMatch ?feature .
+   ?blanknode skos:exactMatch ?label .
+   ?label skos:prefLabel "Lampe"@de .
+}
+
+# Tür-Features
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+   SELECT ?feature WHERE {
+   ?blanknode skos:relatedMatch ?feature .
+   ?blanknode skos:exactMatch ?label .
+   ?label skos:prefLabel "Tuer"@de.
+}
+
+# Features, die von einer Person erstellt wurden
+
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?feature WHERE { 
+  ?feature dcterms:creator "thiery.florian@gmail.com" .
+}
+
+# Features, die von einer Person annotiert wurden
+
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?feature WHERE { 
+  ?agent foaf:mbox "thiery.florian@gmail.com" .
+  ?anno oa:annotatedBy ?agent .
+  ?anno oa:hasBody ?blanknode .
+  ?blanknode skos:relatedMatch ?feature .
+}
+
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+SELECT ?feature WHERE { 
+  ?agent foaf:mbox "martin.unold@fh-mainz.de" .
+  ?anno oa:annotatedBy ?agent .
+  ?anno oa:hasBody ?blanknode .
+  ?blanknode skos:relatedMatch ?feature .
+}

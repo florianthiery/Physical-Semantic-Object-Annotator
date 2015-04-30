@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+		 xmlns:pr="http://predicaterepository.org#">
+
+  <rdf:Property rdf:about="http://predicaterepository.org#hasColor">
+    <rdfs:label xml:lang="de">hat Farbe</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+    <rdfs:label xml:lang="en">see also</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://www.w3.org/2002/07/owl#sameAs">
+    <rdfs:label xml:lang="en">same as</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#relatedMatch">
+    <rdfs:label xml:lang="en">related match</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch">
+    <rdfs:label xml:lang="en">close match</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+    <rdfs:label xml:lang="en">exact match</rdfs:label>
+  </rdf:Property>
+
+</rdf:RDF>
+
+

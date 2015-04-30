@@ -1,0 +1,134 @@
+<html>
+<head>
+	<title>Physical Semantic Object Annotator (PSOA)</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/global_variables.js"></script>
+	<script src="js/load.js"></script>
+	<script src="js/communicator.js"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/annotation.js"></script>
+	<script src="js/sparql.js"></script>
+	<script src="js/gui.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script>
+	// Load Input
+	function init() {
+		GUI.init();
+		UTILS.raiseEvent("change","mode1");
+		LOAD.setAgents();
+		LOAD.setLabels();
+		LOAD.setResources();
+		LOAD.setPredicates();
+		IO.readSpatialcontexts();
+		SPARQL.semanticobjects("SELECT DISTINCT ?so ?prefLabel WHERE { ?bn <http://www.w3.org/2004/02/skos/core#prefLabel> ?prefLabel . ?a <http://www.w3.org/ns/oa#hasBody> ?bn . ?a <http://www.w3.org/ns/oa#hasTarget> ?so . ?so <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/dc/dcmitype/PhysicalObject> . } ORDER BY ASC(?prefLabel)");
+		SPARQL.annotations("SELECT ?anno ?date ?motivation WHERE { ?anno <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/oa#Annotation> . ?anno <http://www.w3.org/ns/oa#annotatedAt> ?date. ?anno <http://www.w3.org/ns/oa#motivatedBy> ?motivation. } ORDER BY DESC(?date)");
+	}
+	function refresh() {
+		location = location;
+	}
+	</script>
+</head>
+<body onLoad="init();">
+	
+	<div class="navbar-inner">
+		<p style="float: right; margin-top: 0.8em"><a id="changelog" href="changelog.htm"></a> | CC BY-SA 4.0 | <a href="http://www.florian-thiery.de" target="_blank">Florian Thiery M.Sc.</a> @ <a href="https://github.com/florianthiery" target="_blank">GitHub</a> | <a href="mailto:florian.thiery@fh-mainz.de">Kontakt</a>
+		</p>
+		<p style="float: left; margin-top: 0.8em"><a href="index.htm">Annotator</a> | <a href="workflow.htm">Anleitung</a> | <a href="datamodel.htm">Datenmodell</a> | <a href="psoa.htm">Dokumentation</a> | <a href="sparql.htm">SPARQL Beispiel</a>  | <a href="sos.htm">Semantic Object Service</a>
+		</p>
+	</div>
+	
+	<h1 class="page-header">Physical Semantic Object Annotator (PSOA)</h1>
+	
+	<div>
+		<h2>Annotationsauswahl <a href="javaScript:refresh();"><img src="img/refresh.jpg" height="30px"></a></h2>
+		<input class="toggle" type="radio" name="mode" id="mode3" value="mode3" onChange="GUI.changeMode('mode3');"> Neues Semantic Object erstellen
+		&nbsp;&nbsp;
+		<input class="toggle" type="radio" name="mode" id="mode2" value="mode2" onChange="GUI.changeMode('mode2');"> Semantic Object annotieren
+		&nbsp;&nbsp;
+		<input class="toggle" type="radio" name="mode" id="mode1" value="mode1" onChange="GUI.changeMode('mode1');" checked> Feature annotieren
+		&nbsp;&nbsp;
+		<input class="toggle" type="radio" name="mode" id="mode4" value="mode4" onChange="GUI.changeMode('mode4');"> Semantic Object Relation erstellen
+		&nbsp;&nbsp;
+		<input class="toggle" type="radio" name="mode" id="mode4" value="mode4" onChange="GUI.changeMode('mode5');"> Annotation l&ouml;schen
+	</div>
+	
+	<div class="page-bottom2">
+		<div id="modeheader">Mode Headline</div>
+		<div class="page-bottom3">
+			<b>Labeling:</b>&nbsp;&nbsp;
+			<input class="toggle" type="checkbox" id="pl_check" onChange="GUI.displayForm('pl_check');">&nbsp;prefLabel&nbsp;
+			<input class="toggle" type="checkbox" id="al_check" onChange="GUI.displayForm('al_check');">&nbsp;altLabel&nbsp;
+			<input class="toggle" type="checkbox" id="sn_check" onChange="GUI.displayForm('sn_check');">&nbsp;scopeNote&nbsp;
+			&nbsp;<b>Linking:</b>&nbsp;&nbsp;
+			<input class="toggle" type="checkbox" id="feature_check" onChange="GUI.displayForm('feature_check');">&nbsp;Feature&nbsp;
+			<input class="toggle" type="checkbox" id="label_check" onChange="GUI.displayForm('label_check');">&nbsp;Label&nbsp;
+			<input class="toggle" type="checkbox" id="ed_check" onChange="GUI.displayForm('ed_check');">&nbsp;Expert Data&nbsp;
+			<input class="toggle" type="checkbox" id="uri_check" onChange="GUI.displayForm('uri_check');">&nbsp;Link zu URI&nbsp;
+			<input class="toggle" type="checkbox" id="literal_check" onChange="GUI.displayForm('literal_check');">&nbsp;Literal&nbsp;
+		</div>
+	</div>
+	<div class="page-bottom2" id="annotator" hidden>
+		<h3>Annotator</h3>
+		<select id="agent"></select>
+	</div>
+	<div class="page-bottom2" id="annotations" hidden>
+		<h3>Annotation</h3>
+		<select id="anno" onChange="GUI.displayAnnoMetadata();"></select>
+		<div id="annometa"></div>
+	</div>
+	<div id="objects" hidden>
+		<div id="objects_semantic" class="page-bottom2">
+			<h3>Semantic Object</h3>
+			<select id="semobj"></select>
+			<div id="so2" hidden><br><b>predicate: </b><select id="predrelation"></select><br><br><select id="semobj2"></select></div>
+		</div>
+		<div id="objects_feature" class="page-bottom2">
+			<h3>Feature Object</h3>
+			<div id="feature1">
+				<b>Spatialcontext: </b><select id="spatialcontext" onChange="IO.readFeatures(document.getElementById('spatialcontext').value);"></select>&nbsp;&nbsp;
+				<b>predicate: </b><i>skos:relatedMatch</i>&nbsp;&nbsp;<b>Feature: </b><select id="feature" onChange="IO.readFeatureImage(document.getElementById('feature').value);"></select>
+				<br><br>
+				<img id="featureimage" src="img/no_image.jpg" height="250" onerror="this.src='img/no_image.jpg';">
+				&nbsp;&nbsp;&nbsp;&nbsp;<span id="featuretext"><b>Test</b></span>
+			</div>
+		</div>
+	</div>
+	<div class="page-bottom2" id="labeling" hidden>
+		<h3>Labeling</h3>
+		<div id="linkpl"><b>predicate: </b><i>skos:prefLabel</i>&nbsp;&nbsp;<input id="prefLabel" type="text" size="50" maxlength="150" value="none"><b> lang: </b><input id="prefLabelLang" type="text" size="2" maxlength="2" value="de"><br></div>
+		<div id="linkal"><b>predicate: </b><i>skos:altLabel</i>&nbsp;&nbsp;<input id="altLabel" type="text" size="50" maxlength="150" value="none"><b> lang: </b><input id="altLabelLang" type="text" size="2" maxlength="2" value="de"><br></div>
+		<div id="linksn"><b>predicate: </b><i>skos:scopeNote</i>&nbsp;&nbsp;<input id="scopeNote" type="text" size="50" maxlength="150" value="none"><b> lang: </b><input id="scopeNoteLang" type="text" size="2" maxlength="2" value="de"></div>
+	</div>
+	<div class="page-bottom2" id="labelinglinking" hidden>
+		<h3>Labeling & linking to Resources</h3>
+		<div id="linklabel"><b>predicate: </b><i>skos:exactMatch</i>&nbsp;&nbsp;<b>Label: </b><select id="label"></select><br><br></div>
+		<div id="linked"><b>predicate: </b><select id="predicate"></select>&nbsp;&nbsp;<b>ExpertData: </b><select id="resource"></select><br><br></div>
+		<div id="linktouri">
+			<div id="link1"><input class="toggle" type="checkbox" id="uri1_check">&nbsp;&nbsp;<b>predicate: </b><select id="predicate1"></select>&nbsp;&nbsp;<b>URI: </b><input id="uri1" type="text" size="50" maxlength="150">&nbsp;&nbsp;<input class="button" type="button" id="button_plusuri1" value="+" onclick="GUI.addButton('button_plusuri1');"></div><br>
+			<div id="link2"><input class="toggle" type="checkbox" id="uri2_check">&nbsp;&nbsp;<b>predicate: </b><select id="predicate2"></select>&nbsp;&nbsp;<b>URI: </b><input id="uri2" type="text" size="50" maxlength="150">&nbsp;&nbsp;<input class="button" type="button" id="button_plusuri2" value="+" onclick="GUI.addButton('button_plusuri2');"></div><br>
+			<div id="link3"><input class="toggle" type="checkbox" id="uri3_check">&nbsp;&nbsp;<b>predicate: </b><select id="predicate3"></select>&nbsp;&nbsp;<b>URI: </b><input id="uri3" type="text" size="50" maxlength="150"></div>
+		</div>
+		<div id="linktoliteral">
+			<div id="link4"><input class="toggle" type="checkbox" id="lit1_check">&nbsp;&nbsp;<b>predicate: </b><select id="literal1"></select>&nbsp;&nbsp;<b>Literal: </b><input id="lit1" type="text" size="50" maxlength="150">&nbsp;&nbsp;<input class="button" type="button" id="button_plusuri3" value="+" onclick="GUI.addButton('button_plusuri3');"></div><br>
+			<div id="link5"><input class="toggle" type="checkbox" id="lit2_check">&nbsp;&nbsp;<b>predicate: </b><select id="literal2"></select>&nbsp;&nbsp;<b>Literal: </b><input id="lit2" type="text" size="50" maxlength="150">&nbsp;&nbsp;<input class="button" type="button" id="button_plusuri4" value="+" onclick="GUI.addButton('button_plusuri4');"></div><br>
+			<div id="link6"><input class="toggle" type="checkbox" id="lit3_check">&nbsp;&nbsp;<b>predicate: </b><select id="literal3"></select>&nbsp;&nbsp;<b>Literal: </b><input id="lit3" type="text" size="50" maxlength="150">&nbsp;&nbsp;<input class="button" type="button" id="button_plusuri5" value="+" onclick="GUI.addButton('button_plusuri5');"></div><br>
+			<div id="link7"><input class="toggle" type="checkbox" id="lit4_check">&nbsp;&nbsp;<b>predicate: </b><select id="literal4"></select>&nbsp;&nbsp;<b>Literal: </b><input id="lit4" type="text" size="50" maxlength="150"></div>
+		</div>
+	</div>
+	<div class="page-bottom2" id="buttons">
+		<br>
+		<input class="button" type="button" id="button_mode1" value="Feature Annotation erzeugen" onclick="ANNO.createAnnotationFeature();" hidden>
+		<input class="button" type="button" id="button_mode2" value="Semantic Object Annotation erzeugen" onclick="ANNO.createAnnotationSemanticObject();" hidden>
+		<input class="button" type="button" id="button_mode3" value="Semantic Object erzeugen" onclick="ANNO.createAnnotationNewSemanticObject();" hidden>
+		<input class="button" type="button" id="button_mode4" value="Relation erzeugen" onclick="ANNO.createRelation();" hidden>
+		<input class="button" type="button" id="button_mode5" value="Annotation l&ouml;schen" onclick="ANNO.deleteAnnotation();" hidden>
+	</div>
+	<div class="page-bottom2" id="statusbar">
+		<p>
+			<div id="a"><img src="img/info.png" height="25px">&nbsp;<i>Annotation Object: none</i></div>
+			<div id="so"><img src="img/info.png" height="25px">&nbsp;<i>Semantic Object: none</i></div>
+			<div id="status"></div>
+		</p>
+	</div>
+</body>
+</html>

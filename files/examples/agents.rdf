@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/">
+
+  <foaf:Person rdf:about="http://labeling.i3mainz.fh-mainz.de/semanticobject/object/13e38684-aaef-4554-88c2-092020d9fe1c">
+    <foaf:name>Florian Thiery</foaf:name>
+    <foaf:mbox>thiery.florian@gmail.com</foaf:mbox>
+  </foaf:Person>
+
+  <foaf:Person rdf:about="http://labeling.i3mainz.fh-mainz.de/semanticobject/object/bd9db12d-bba6-481a-82e0-89b45d511d3c">
+    <foaf:name>Martin Unold</foaf:name>
+    <foaf:mbox>martin.unold@fh-mainz.de</foaf:mbox>
+  </foaf:Person>
+  
+  <foaf:Person rdf:about="http://labeling.i3mainz.fh-mainz.de/semanticobject/object/f042ae89-0f2a-4f7e-a2bf-795b2010caa4">                                                                     
+    <foaf:name>Julia Ganitseva</foaf:name>
+    <foaf:mbox>julia.ganicheva@fh-mainz.de</foaf:mbox>
+  </foaf:Person>
+
+</rdf:RDF>

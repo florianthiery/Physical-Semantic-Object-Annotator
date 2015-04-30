@@ -1,0 +1,18 @@
+SELECT DISTINCT ?feature WHERE  {
+
+?bn2 <http://www.w3.org/2004/02/skos/core#relatedMatch> ?feature .
+?a1 <http://www.w3.org/ns/oa#hasBody> ?bn2 .
+?a1 <http://www.w3.org/ns/oa#hasBody> ?bn1 . 
+?bn1 <http://juliasvocabulary.org/hasColor> "grau" .
+}
+
+
+SELECT DISTINCT ?feature WHERE  {
+
+?bn2 <http://www.w3.org/2004/02/skos/core#relatedMatch> ?feature .
+?a2 <http://www.w3.org/ns/oa#hasBody> ?bn2 .
+?a2 <http://www.w3.org/ns/oa#hasTarget> ?so .
+?a1 <http://www.w3.org/ns/oa#hasTarget> ?so .
+?a1 <http://www.w3.org/ns/oa#hasBody> ?bn1 . 
+?bn1 <http://juliasvocabulary.org/hasColor> "blue" .
+}

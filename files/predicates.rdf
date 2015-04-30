@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+		 xmlns:pr="http://predicaterepository.org#">
+  
+  <rdf:Property rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+    <rdfs:label xml:lang="en">see also</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://www.w3.org/2002/07/owl#sameAs">
+    <rdfs:label xml:lang="en">same as</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#relatedMatch">
+    <rdfs:label xml:lang="en">related match</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch">
+    <rdfs:label xml:lang="en">close match</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+    <rdfs:label xml:lang="en">exact match</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#color">
+    <rdfs:label xml:lang="de">hat Farbe</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#height">
+    <rdfs:label xml:lang="de">hat Höhe</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#width">
+    <rdfs:label xml:lang="de">hat Breite</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#id">
+    <rdfs:label xml:lang="de">hat id</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#model">
+    <rdfs:label xml:lang="de">hat Modell</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#position">
+    <rdfs:label xml:lang="de">hat Position</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#title">
+    <rdfs:label xml:lang="de">hat Titel</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#type">
+    <rdfs:label xml:lang="de">hat Typ</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#from">
+    <rdfs:label xml:lang="de">von</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#until">
+    <rdfs:label xml:lang="de">bis</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#amount">
+    <rdfs:label xml:lang="en">amount</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#paperFormat">
+    <rdfs:label xml:lang="de">hat Papierformat</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#standsOn">
+    <rdfs:label xml:lang="de">steht auf</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#hasItem">
+    <rdfs:label xml:lang="de">hat Objekt</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#isConnected">
+    <rdfs:label xml:lang="de">ist verbunden mit</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#belongsTo">
+    <rdfs:label xml:lang="de">gehört zu</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#sitsBehind">
+    <rdfs:label xml:lang="de">sitzt hinter</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#nextTo">
+    <rdfs:label xml:lang="de">in der Nähe von</rdfs:label>
+  </rdf:Property>
+  
+  <rdf:Property rdf:about="http://predicaterepository.org#stored">
+    <rdfs:label xml:lang="de">speichert</rdfs:label>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="http://predicaterepository.org#hasColor">
+    <rdfs:label xml:lang="de">hat Farbe</rdfs:label>
+  </rdf:Property>
+
+</rdf:RDF>
+
+

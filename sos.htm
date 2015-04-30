@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>PSOA | Semantic Object Service</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/gui.js"></script>
+	<script src="js/global_variables.js"></script>
+</head>
+<body onLoad="GUI.init();">
+	
+	<div class="navbar-inner">
+		<p style="float: right; margin-top: 0.8em"><a id="changelog" href="changelog.htm"></a> | CC BY-SA 4.0 | <a href="http://www.florian-thiery.de" target="_blank">Florian Thiery M.Sc.</a> @ <a href="https://github.com/florianthiery" target="_blank">GitHub</a> | <a href="mailto:florian.thiery@fh-mainz.de">Kontakt</a>
+		</p>
+		<p style="float: left; margin-top: 0.8em"><a href="index.htm">Annotator</a> | <a href="workflow.htm">Anleitung</a> | <a href="datamodel.htm">Datenmodell</a> | <a href="psoa.htm">Dokumentation</a> | <a href="sparql.htm">SPARQL Beispiel</a>  | <a href="sos.htm">Semantic Object Service</a>
+		</p>
+	</div>
+	
+	<h1 class="page-header">PSOA - Semantic Object Service</h1>
+	
+	<h2>Content</h2>
+	<ul>
+		<li><a href="#app">Applikation</a></li>
+		<li><a href="#create">Create</a></li>
+		<li><a href="#get">Get</a></li>
+	</ul>
+	
+	<h2 id="app">Applikation</h2>
+	<p align="justify" style="line-height: 160%;">Der <b>Semantic Object Service</b> bietet die M&ouml;glichkeit durch senden eines Graphen, welcher seinen Startknoten als leeren Knoten enth&auml;lt, diesen in einen Triple Store zu speichern und die Daten mittels HTTP URI zur Verf&uuml;gung zu stellen. Die Resource wird durch eine UUID repr&auml;sentiert. Der Service ist &uuml;ber <code><a href="http://labeling.i3mainz.fh-mainz.de/semanticobject" target="_blank">http://labeling.i3mainz.fh-mainz.de/semanticobject</a></code> erreichbar.</p>
+	<p><center><img src="img/sos1.png"></center></p>
+	
+	<h2 id="create">Create</h2>
+	<p align="justify" style="line-height: 160%;">Durch senden eins <code>POST</code> request an die URL <code><a href="http://labeling.i3mainz.fh-mainz.de/semanticobject/createobject" target="_blank">http://labeling.i3mainz.fh-mainz.de/semanticobject/createobject</a></code> mit diversen Parametern wird das semantische HTTP Objekt erstellt. Der leere Knoten wird in eine UUID URI umgewandelt und kann so adressiert werden. zwei Parameter sind zu &uuml;bergeben: <code>type</code> und <code>rdf</code>. Der type ist immer auf ttl zu setzen. Rdf enth&auml;lt einen Graphen in Turtle Syntax. Wichtig hierbei ist, dass der leere knoten als <code>_:bnode</code> bezeichnet wird. Prefixes m&uuml;ssen als <code>@prefix &lt;http://...&gt .;</code>gekennzeichnet werden.</p>
+	<p><b>Parameter:</b>
+	<ul>
+		<li><code>POST PARAM type=ttl</code></li>
+		<li><code>POST PARAM rdf={turtlesyntax}</code></li>
+	</ul>
+	</p>
+	<p><b>Beispiele:</b>
+	<ul>
+		<li><code>http://labeling.i3mainz.fh-mainz.de/semanticobject/createobject?type=ttl&rdf=_:bnode &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://purl.org/dc/dcmitype/PhysicalObject&gt;, &lt;http://www.w3.org/2004/02/skos/core#Concept&gt;, &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#Resource&gt;, &lt;http://www.w3.org/2002/07/owl#Thing&gt; .</code></li>
+		<li><code>http://labeling.i3mainz.fh-mainz.de/semanticobject/createobject?type=ttl&rdf=@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns%23&gt; . @prefix skos: &lt;http://www.w3.org/2004/02/skos/core%23&gt; . @prefix dctypes: &lt;http://purl.org/dc/dcmitype/&gt; . @prefix owl: &lt;http://www.w3.org/2002/07/owl%23&gt; . _:bnode rdf:type dctypes:PhysicalObject, skos:Concept, rdf:Resource, owl:Thing .</code></li>
+	</ul>
+	</p>
+	
+	<h2 id="get">Get</h2>
+	<p align="justify" style="line-height: 160%;">Jedes Semantic Object kann durch einen <code>GET</code> request an die URL <code>http://labeling.i3mainz.fh-mainz.de/semanticobject/object/{UUID}.{ttl,rdf,nt,json}</a></code> abgefragt werden. Die Anfrage URL ist mit einem Punkt und Format zu erg&auml;nzen.</p>
+	<p><b>Formate:</b>
+	<ul>
+		<li><code>default: RDF/XML Syntax</code></li>
+		<li><code>ttl: RDF/Turtle Syntax</code></li>
+		<li><code>rdf: RDF/XML Syntax</code></li>
+		<li><code>n3: RDF-N3 Syntax</code></li>
+		<li><code>json: JSON Syntax</code></li>
+	</ul>
+	
+</body>
+</html>

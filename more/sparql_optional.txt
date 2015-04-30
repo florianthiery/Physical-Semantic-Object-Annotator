@@ -1,0 +1,28 @@
+PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oa:<http://www.w3.org/ns/oa#>
+PREFIX skos:<http://www.w3.org/2004/02/skos/core#>
+PREFIX owl:<http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT * WHERE {
+  ?b1 skos:prefLabel "Gammatuer" .
+  ?b1 skos:relatedMatch ?feature .
+  ?a1 oa:hasBody ?b1 .
+  ?a1 oa:hasTarget ?so1 .
+  OPTIONAL {
+    ?a2 oa:hasTarget ?so1 .
+    ?a2 oa:hasBody ?b2 .
+    ?b2 skos:relatedMatch ?feature2 .
+  }
+  OPTIONAL {
+    ?so1 owl:sameAs ?so2 .
+    ?a3 oa:hasTarget ?so2 .
+    ?a3 oa:hasBody ?b3 .
+    ?b3 skos:relatedMatch ?feature3 .
+		OPTIONAL {
+		?a4 oa:hasTarget ?so2 .
+		?a4 oa:hasBody ?b4 .
+		?b4 skos:relatedMatch ?feature4 .
+	  }
+  }
+}

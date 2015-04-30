@@ -1,0 +1,47 @@
+#Turtle Terese RDF Triple Language
+
+#Classes
+@prefix rdf: 		<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: 		<http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: 		<http://www.w3.org/2001/XMLSchema#> .
+@prefix oa: 		<http://www.w3.org/ns/oa#> .
+@prefix foaf: 		<http://xmlns.com/foaf/0.1/> .
+@prefix dctypes: 	<http://purl.org/dc/dcmitype/> .
+@prefix skos: 		<http://www.w3.org/2004/02/skos/core#> .
+@prefix trig: 		<http://www.w3.org/2004/03/trix/rdfg-1/> .
+@prefix owl: 		<http://www.w3.org/2002/07/owl#> .
+@prefix geo: 		<http://www.opengis.net/ont/geosparql#> .
+
+@prefix semobj: 	<http://semanticobjects.org/> .
+@prefix agent: 	<http://agents.org/> .
+@prefix anno: 	<http://annotations.org/> .
+@prefix label: 	<http://labelconcepts.org/> .
+@prefix feature: 	<http://features.org/> .
+
+#Annotation
+anno:1
+  a oa:Annotation ;
+  oa:motivatedBy oa:describing ;
+  oa:annotatedAt "2014-07-11T12:00:00Z"^^xsd:dateTime ;
+  oa:annotatedBy agent:thiery ;
+  oa:hasTarget semobj:1 ;
+  #Body default
+  oa:hasBody [
+    a trig:Graph, skos:Concept ;
+    #Class Definition
+	skos:exactMatch label:1 ;
+    #Feature
+	skos:relatedMatch feature:1 ;
+	#Labeling
+	skos:prefLabel "a" ;
+	skos:altLabel "b" ;
+	skos:scopeNote "c"
+  ] , [
+    a trig:Graph, skos:Concept, rdfs:Resource, owl:Thing ;
+	skos:prefLabel "b" ;
+  ] .
+
+semobj:1 a dctypes:PhysicalObject, skos:Concept, rdfs:Resource, owl:Thing .
+agent:thiery a foaf:Person .
+label:1 a skos:Concept .
+feature:1 a geo:SpatialObject, geo:Feature, skos:Concept .

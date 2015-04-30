@@ -1,0 +1,8 @@
+- Komponenten
+--Feature(REST mit URIs)
+--Agents --> RDF (FOAF)
+--Labels --> RDF (SKOS)
+--Resources --> RDF (RDFS)
+--Features(optional)
+
+neue Annotation zu Semantic Object

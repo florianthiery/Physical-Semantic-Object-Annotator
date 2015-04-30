@@ -1,0 +1,106 @@
+<html>
+<head>
+	<title>PSOA - Semantic Object Datamodel</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/gui.js"></script>
+	<script src="js/global_variables.js"></script>
+</head>
+<body onLoad="GUI.init();">
+	
+	<div class="navbar-inner">
+		<p style="float: right; margin-top: 0.8em"><a id="changelog" href="changelog.htm"></a> | CC BY-SA 4.0 | <a href="http://www.florian-thiery.de" target="_blank">Florian Thiery M.Sc.</a> @ <a href="https://github.com/florianthiery" target="_blank">GitHub</a> | <a href="mailto:florian.thiery@fh-mainz.de">Kontakt</a>
+		</p>
+		<p style="float: left; margin-top: 0.8em"><a href="index.htm">Annotator</a> | <a href="workflow.htm">Anleitung</a> | <a href="datamodel.htm">Datenmodell</a> | <a href="psoa.htm">Dokumentation</a> | <a href="sparql.htm">SPARQL Beispiel</a>  | <a href="sos.htm">Semantic Object Service</a>
+		</p>
+	</div>
+	
+	<h1 class="page-header">PSOA - Semantic Object Data Model</h1>
+	
+	<h2>Content</h2>
+	<ul>
+		<li><a href="#datamodel">Datenmodel</a>
+			<ul>
+				<li><a href="#graph">Graph</a></li>
+				<li><a href="#namespaces">Namespaces</a></li>
+				<li><a href="#turtle">Turtle Syntax</a></li>
+			</ul>
+		</li>
+		<li><a href="#example">Ein Beispiel</a></li>
+		<li><a href="#multipleannotaions">Multiple Annotationen & Semantic Object Relationen</a></li>
+	</ul>
+	
+	<h2 id="datamodel">Datenmodel</h2>
+	<p align="justify" style="line-height: 160%;">Das <b>Semantic Object Data Model</b> (SOD) zeigt ein allgemeing&uuml;ltiges Modell zur Annotation semantischer Objekte mit Hilfe der Technologie des Semantic Web, dem Resource Description Framework (RDF). Als semantisches Objekt wird eine HTTP Resource gesehen, welche ein reales (physisches) Objekt der Realit&auml;t beschreibt. Beispiele hierf&uuml;r sind z.B. Personen, T&uuml;ren, Schr&auml;nke, Computer, Kirchen, etc. Zur Generierung semantischer Objekte kann der <a href="sos.htm">Semantic Object Service</a> genutzt werden. Die Annotation folgt dem <a href="http://www.openannotation.org/spec/core/" target="_blank">Open Annotation Data Model</a>. Eine Annotation ist hierbei mit einer Menge von Resourcen &uuml;ber einen Body und Target verbunden. Hierbei sagt der Body etwas &uuml;ber das Target aus. Der verbindende Knoten, die Annotation, enth&auml;lt Metadaten wie das Datum, den Annotator, sowie den Typ (bzw. die Motivation). Schlieﬂen sich mehrere Resourcen an den Body an, ist ein Graph zu erzeugen, z.B. ein nicht im Web adressierbarer leerer Knoten (blank Node). Die Annotation kann hier als beschreibenes Element gesehen werden, das heiﬂt ein Annotator erzeugt Attribute wie Name, Typ, geometrische Repr&auml;sentation des semantischen Objekts. Dar&uuml;ber hinaus k&ouml;nnen &uuml;ber eigene Pr&auml;dikate und anzuschlieﬂende Resourcen weitere Eigenschaften, wie z.B. eine Farbe benannt werden. Beziehungen zwischen zwei semantischen Objekten werden &uuml;ber einen <a href="#multipleannotaions">zweiten Annotationstypen</a> beschrieben. Ein semantisches Objekt kann zudem mehr als eine Annotation von einer oder mehreren Personen enthalten.</p>
+	<p><center><img src="img/intro_model.png" width="350"><br><i><a href="http://www.openannotation.org/spec/core/images/intro_model.png" target="_blank">Quelle: Open Annotation Data Model</a></i></center></p>
+	<p align="justify" style="line-height: 160%;">Ein zu annotierendes semantisches Objekt enth&auml;lt verschiedene Klassendefinitionen, allen voran dctypes:PhysicalObject. Dies spiegelt die Idee der Annotation real existierender physischer Objekte wieder. Weitere Typdefinitionen sind zur Verlinkung des semantischen Objekts mit Hilfe von RDF mit den g&auml;ngigsten Definitionen vorgesehen. Die Open Annotation Annotation zeigt einen Body auf, der &uuml;ber das Target etwas aussagt. Im Fall des Semantic Objekt Data Model kann der Body und das Target als identisch angesehen werden, welches lediglich &uuml;ber eine Annotation verbunden ist, so dass die annotierten Eigenschaften eindeutig dem Ersteller zugeordnet werden k&ouml;nnen. Jede Annotation enth&auml;lt gem&auml;ﬂ Open Annotation Model eine Klassendefinition, eine Open Annotation Motivation, das Datum der Erstellung nach <a href="https://de.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a>, sowie den Annotator. Dieser wird mit Hilfe des <a href="http://de.wikipedia.org/wiki/FOAF" target="_blank">Fried of a Friend (FOAF)</a> Modells modelliert. Der Body der Annotation besteht aus einem oder mehreren Graphen (hier leere Knoten, blank nodes). Hierbei ist zu beachten, dass ein prim&auml;rer leerer Knoten mit einer textlichen Beschreibung des semantischen Objekts (prefLabel, altLabel, scopeNote), einem Labeling (skos:Concept) zur Typdefinition und einer geometrischen Repr&auml;sentation (Feature nach GeoSPARQL Geometrie) vorhanden sein muss, wobei die Pr&auml;dikate festgelegt sind. Das pr&auml;ferierte Label ist als nicht optional anzusehen. Jedes weitere Pr&auml;dikat und damit verbundene Resourcen ist an einen eigenen leeren Knoten zu koppeln. Diese leere Knoten enthalten g&auml;ngige Klassendefinitionen, sodass &uuml;bliche RDF Pr&auml;dikate genutzt werden k&ouml;nnen. Der nachfolgende Graph zeigt diesen Sachverhalt auf und wird durch die verwendeten Namespaces und ein Beispiel in Turtle Syntax erg&auml;nzt.</p>
+	
+	<h3 id="graph">Graph</h3>
+	<p><center><img src="img/datamodel.png"></center></p>
+	
+	<h3 id="namespaces">Namespaces</h3>
+	<code>rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .</code><br>
+	<code>rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</code><br>
+	<code>xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</code><br>
+	<code>oa: &lt;http://www.w3.org/ns/oa#&gt; .</code><br>
+	<code>foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .</code><br>
+	<code>dctypes: &lt;http://purl.org/dc/dcmitype/&gt; .</code><br>
+	<code>skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</code><br>
+	<code>trig: &lt;http://www.w3.org/2004/03/trix/rdfg-1/&gt; .</code><br>
+	<code>owl: &lt;http://www.w3.org/2002/07/owl#&gt; .</code><br>
+	<code>geo: &lt;http://www.opengis.net/ont/geosparql#&gt; .</code><br>
+	
+	<h3 id="turtle">Turtle Syntax</h3>
+	<code>@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .</code><br>
+	<code>@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .</code><br>
+	<code>@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .</code><br>
+	<code>@prefix oa: &lt;http://www.w3.org/ns/oa#&gt; .</code><br>
+	<code>@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .</code><br>
+	<code>@prefix dctypes: &lt;http://purl.org/dc/dcmitype/&gt; .</code><br>
+	<code>@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .</code><br>
+	<code>@prefix trig: &lt;http://www.w3.org/2004/03/trix/rdfg-1/&gt; .</code><br>
+	<code>@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .</code><br>
+	<code>@prefix geo: &lt;http://www.opengis.net/ont/geosparql#&gt; .</code><br>
+	<code>@prefix semobj: &lt;http://semanticobjects.org/&gt; .</code><br>
+	<code>@prefix agent: &lt;http://agents.org/&gt; .</code><br>
+	<code>@prefix anno: &lt;http://annotations.org/&gt; .</code><br>
+	<code>@prefix label: &lt;http://labelconcepts.org/&gt; .</code><br>
+	<code>@prefix feature: &lt;http://features.org&gt; .</code><br><br>
+	<code>#Annotation</code><br>
+	<code><b>[anno]</b></code><br>
+	<code>&nbsp;&nbsp;a oa:Annotation ;</code><br>
+	<code>&nbsp;&nbsp;oa:motivatedBy oa:describing ;</code><br>
+	<code>&nbsp;&nbsp;oa:annotatedAt "<b>[dateFormat ISO 8601]</b>"^^xsd:dateTime ;</code><br>
+	<code>&nbsp;&nbsp;oa:annotatedBy <b>[agent]</b> ;</code><br>
+	<code>&nbsp;&nbsp;oa:hasTarget <b>[semanticobject]</b> ;</code><br>
+	<code>&nbsp;&nbsp;#Body default</code><br>
+	<code>&nbsp;&nbsp;oa:hasBody [</code><br>
+	<code>&nbsp;&nbsp;&nbsp;&nbsp;a trig:Graph, skos:Concept ;</code><br>
+	<code>&nbsp;&nbsp;&nbsp;&nbsp;#Class Definition</code><br>
+	<code>&nbsp;&nbsp;skos:exactMatch <b>[labelconcept]</b> ;</code><br>
+	<code>&nbsp;&nbsp;&nbsp;&nbsp;#Feature</code><br>
+	<code>&nbsp;&nbsp;skos:relatedMatch <b>[feature]</b> ;</code><br>
+	<code>&nbsp;&nbsp;#Labeling</code><br>
+	<code>&nbsp;&nbsp;skos:prefLabel "<b>[string]</b>" ;</code><br>
+	<code>&nbsp;&nbsp;skos:altLabel "<b>[string]</b>" ;</code><br>
+	<code>&nbsp;&nbsp;skos:scopeNote "<b>[string]</b>"</code><br>
+	<code>&nbsp;&nbsp;] , [ #additional body</code><br>
+	<code>&nbsp;&nbsp;&nbsp;&nbsp;a trig:Graph, skos:Concept, rdfs:Resource, owl:Thing ;</code><br>
+	<code>&nbsp;&nbsp;<b>[rdf:property]</b> "<b>[string]</b>" ;</code><br>
+	<code>&nbsp;&nbsp;] .</code><br>
+	<code><b>[semanticobject]</b> a dctypes:PhysicalObject, skos:Concept, rdfs:Resource, owl:Thing .</code><br>
+	<code><b>[agent]</b> a foaf:Person .</code><br>
+	<code><b>[labelconcept]</b> a skos:Concept .</code><br>
+	<code><b>[feature]</b> a geo:SpatialObject, geo:Feature, skos:Concept .</code>
+	
+	<h2 id="example">Ein Beispiel</h2>
+	
+	<p align="justify" style="line-height: 160%;">Ein real existierendes physisches Objekt soll annotiert werden. Hierbei handelt es sich um die Eingangst&uuml;r des B&uuml;ro Gamma in den R&auml;umen des Instituts f&uuml;r Raumbezogene Informations- und Messtechnik (i3mainz). Der Annotator ist Florian Thiery, welcher durch seinen Namen und eine Emailadresse eindeutig identifiert ist. Die Annotation selbst wird durch den Annotator und die Uhrzeit einzigartig. Es handelt sich lediglich um beschreibende Informationen, somit ist die Motivation als describing festzulegen. Im Hauptknoten ist zun&auml;chst das Objekt textlich zu beschreiben, welches durch diverese prefLabel, altLabel und scopeNotes erm&ouml;glicht wird. Als Typ wird eine T&uuml;r festgelegt, welche in einem SKOS Concept definiert ist und Links zu beschreibenden Resourcen enth&auml;lt. Die Gammat&uuml;r ist ebenfalls als Geometrie vorhanden (hier aus dem IBR Generic Viewer). Als weitere beschreibende Eigenschaft ist ein Wikipedia Artikel anzusehen. Dieser wird &uuml;ber ein Pr&auml;dikat mit einem neuen Nebenknoten mit der Annotation verbunden.</p>
+	<p><center><img src="img/example.png"></center></p>
+	
+	<h2 id="multipleannotaions">Multiple Annotationen<br><br>& Semantic Object Relationen</h2>
+	
+	<p align="justify" style="line-height: 160%;">Ein semantisches Objekt kann mehrere Annotation enthalten. Diese k&ouml;nnen von einer Person, wie auch von mehreren Personen stammen. Hierdurch ist beispielweise ein wissenschaftlicher Diskurs m&ouml;glich. Das verbindende Pr&auml;dikat hierbei ist das Target. Durch die festgelegte Struktur ist hierbei ein gleiches Schema bei einer Abfrage m&ouml;glich. Soll eine Relation zwischen zwei semantischen Objekten erzeugt werden, wird eine Body-lose Annotation erstellt. Das Target der Annotation enth&auml;lt hierbei ein Pr&auml;dikat zu einem weiteren semantischen Objekt. Das Pr&auml;dikat ist in beiden Richtungen gleich zu w&auml;hlen. Durch diese Struktur ist der Urheber dieser Relation weiterhin erkennbar, eine semantische Abfrage der Realtionen ist jedoch um einiges vereinfacht.</p>
+	<p><center><img src="img/sorelation.png"></center></p>
+	
+</body>
+</html>

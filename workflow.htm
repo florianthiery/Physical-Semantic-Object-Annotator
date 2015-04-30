@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>PSOA | Anleitung</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/gui.js"></script>
+	<script src="js/global_variables.js"></script>
+</head>
+<body onLoad="GUI.init();">
+	
+	<div class="navbar-inner">
+		<p style="float: right; margin-top: 0.8em"><a id="changelog" href="changelog.htm"></a> | CC BY-SA 4.0 | <a href="http://www.florian-thiery.de" target="_blank">Florian Thiery M.Sc.</a> @ <a href="https://github.com/florianthiery" target="_blank">GitHub</a> | <a href="mailto:florian.thiery@fh-mainz.de">Kontakt</a>
+		</p>
+		<p style="float: left; margin-top: 0.8em"><a href="index.htm">Annotator</a> | <a href="workflow.htm">Anleitung</a> | <a href="datamodel.htm">Datenmodell</a> | <a href="psoa.htm">Dokumentation</a> | <a href="sparql.htm">SPARQL Beispiel</a>  | <a href="sos.htm">Semantic Object Service</a>
+		</p>
+	</div>
+	
+	<h1 class="page-header">PSOA - Anleitung</h1>
+	
+	<h2>Content</h2>
+	<ul>
+		<li><a href="#services">Services</a></li>
+		<li><a href="#workflow">Vorbereitung</a></li>
+		<li><a href="#workflow">Workflow</a></li>
+	</ul>
+	
+	<h2 id="services">Services</h2>
+	<ul>
+		<li><a href="index.htm">Physical Semantic Object Annotator</a></li>
+		<li><a href="datamodel.htm">Semantic Object Data Model</a></li>
+		<li><a href="sos.htm">Semantic Object Service</a></li>
+	</ul>
+	
+	<h2 id="vorbereitung">Vorbereitung</h2>
+	<ul>
+		<li>RDF Dateien erstellen
+			<ul>
+				<li>annotator agents ALS foaf:Agent | <a href="files/examples/agents.rdf">Beispiel</a></li>
+				<li>properties ALS rdf:Property | <a href="files/examples/predicates.rdf">Beispiel</a></li>
+				<li>labels ALS skos:Concept (z.B. mit dem <a href="http://labeling.i3mainz.fh-mainz.de" target="_blank">Labeling System</a>) | <a href="files/examples/labels.rdf">Beispiel</a></li>
+				<li>expert data ALS rdfs:Resource (z.B. mit <a href="http://xtriples.spatialhumanities.de" target="_blank">XTriples</a>) | <a href="files/examples/expertData.rdf">Beispiel</a></li>
+			</ul>
+		</li>
+		<li>Upload der Dateien in die TripleStores (labeling.i3mainz.de - adwserv58.adwudlit.uni-mainz.de)</li>
+		<li>&Auml;nderung der JavaScript-Variablen RDF_agents, RDF_labels, RDF_resources, RDF_predicates in der index.htm</li>
+		<li>Erstellung der Features mit dem <a href="http://ibr.spatialhumanities.de/ibr/viewer" target="_blank">IBR Generic Viewer</a></li>
+	</ul>
+	
+	<h2 id="workflow">Workflow</h2>
+	<ul>
+		<li>Bereits existierendes Feature annotieren
+			<ul>
+				<li>Annotator ausw&auml;hlen &rarr; Annotator</li>
+				<li>Spatialcontext und IBR Feature ausw&auml;hlen &rarr; Feature Object</li>
+				<li>preference Label (prefLabel) in einer Sprache des zu annotierenden semantischen Objekts angeben &rarr; Labeling </li>
+				<li>optional: altLabel, scopeNote des semantischen Objekts &rarr; Labeling, sowie Links zu Labeln, Expert Data, URIs oder Literale hinzuf&uuml;gen &rarr; Labeling & linking to Resources</li>
+				<li>Feature Annotation erzeugen &rarr; <a href="psoa.htm#feature">Graph wird erzeugt</a></li>
+			</ul>
+		</li>
+		<li>Bereits existierendes semantisches Objekt annotieren
+			<ul>
+				<li>Annotator ausw&auml;hlen &rarr; Annotator</li>
+				<li>Semantic Object ausw&auml;hlen &rarr; Semantic Object</li>
+				<li>optional: prefLabel, altLabel, scopeNote des semantischen Objekts &rarr; Labeling, sowie Links zu Labeln, Expert Data, URIs oder Literale hinzuf&uuml;gen &rarr; Labeling & linking to Resources oder Feature hinzuf&uuml;gen &rarr; Feature</li>
+				<li>Semantic Object Annotation erzeugen &rarr; <a href="psoa.htm#so">Graph wird erzeugt</a></li>
+			</ul>
+		</li>
+		<li>Neues semantisches Objekt erzeugen
+			<ul>
+				<li>Annotator ausw&auml;hlen &rarr; Annotator</li>
+				<li>preference Label (prefLabel) in einer Sprache des zu annotierenden semantischen Objekts angeben &rarr; Labeling </li>
+				<li>optional: altLabel, scopeNote des semantischen Objekts &rarr; Labeling, sowie Links zu Labeln, Expert Data, URIs oder Literale hinzuf&uuml;gen &rarr; Labeling & linking to Resources</li>
+				<li>Semantic Object erzeugen &rarr; <a href="psoa.htm#nso">Graph wird erzeugt</a></li>
+			</ul>
+		</li>
+		<li>Semantic Object Relation erstellen
+			<ul>
+				<li>Annotator ausw&auml;hlen &rarr; Annotator</li>
+				<li>2x Semantic Object und Pr&auml;dikat ausw&auml;hlen &rarr; Semantic Object</li>
+				<li>Relation erzeugen &rarr; <a href="psoa.htm#sameAs">Graph wird erzeugt</a></li>
+			</ul>
+		</li>
+		<li>Annotation l&ouml;schen
+			<ul>
+				<li>Annotation ausw&auml;hlen &rarr; Annotation</li>
+				<li>Annotationsgraph inkl. Metadaten und blank Node l&ouml;schen &rarr; <a href="datamodel.htm#datamodel">Graph wird gel&ouml;scht</a></li>
+			</ul>
+		</li>
+	</ul>
+	</ul>
+</body>
+</html>

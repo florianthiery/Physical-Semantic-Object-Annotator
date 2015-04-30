@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+	xmlns:ls="http://143.93.114.137/vocab#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:ls-lab="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:ls-voc="http://143.93.114.137/rest/vocabs/"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" >
+ 
+
+<skos:ConceptScheme rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597">
+	<dcterms:title xml:lang="de">Interieur</dcterms:title>
+	<dcterms:subject xml:lang="de">Interieur</dcterms:subject>
+	<dcterms:description xml:lang="de">Interieur</dcterms:description>
+	<dcterms:date>2014-07-09T16:04:19.784Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+	<dcterms:contributor>Gamma</dcterms:contributor>
+	<dc:language>de</dc:language>
+	<dc:publisher>Labeling System</dc:publisher>
+	<dc:rights>CC BY SA 4.0</dc:rights>
+</skos:ConceptScheme>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/66b196c4c71e4d78b0e966a0a5e92626">
+	<skos:prefLabel xml:lang="de">Lampe</skos:prefLabel>
+	<skos:note xml:lang="de">Lampe</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Lampe</skos:definition>
+	<dcterms:date>2014-07-09T16:12:30.294Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/ad64b987614d49659143c408330924e6">
+	<skos:prefLabel xml:lang="de">Schreibtisch</skos:prefLabel>
+	<skos:note xml:lang="de">Schreibtisch</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Schreibtisch</skos:definition>
+	<dcterms:date>2014-07-09T16:10:46.881Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/bdff80d1fbda4ba09f999ccd8741c2ac">
+	<skos:prefLabel xml:lang="de">Scanner</skos:prefLabel>
+	<skos:note xml:lang="de">Scanner</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Scanner</skos:definition>
+	<dcterms:date>2014-07-09T16:11:53.706Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/0bfcd612409d43f6a8593beb8ddd18ca">
+	<skos:prefLabel xml:lang="de">Fenster</skos:prefLabel>
+	<skos:note xml:lang="de">Fenster</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Fenster</skos:definition>
+	<dcterms:date>2014-07-09T16:12:52.900Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/e0272df502bb455bb2653532356c8c18">
+	<skos:prefLabel xml:lang="de">Tafel</skos:prefLabel>
+	<skos:note xml:lang="de">Tafel</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Tafel</skos:definition>
+	<dcterms:date>2014-07-09T16:13:27.210Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/5d515ff8c14d4b6fa91363beb4dd7ac8">
+	<skos:prefLabel xml:lang="de">Rolladen</skos:prefLabel>
+	<skos:note xml:lang="de">Rolladen</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Rolladen</skos:definition>
+	<dcterms:date>2014-07-09T16:13:00.718Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/7abe9f6000be4125a10775e7cd2e1a2d">
+	<skos:prefLabel xml:lang="de">Tuer</skos:prefLabel>
+	<skos:note xml:lang="de">Tuer</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Tuer</skos:definition>
+	<skos:closeMatch rdf:resource="http://vocab.getty.edu/aat/300002819"/>
+	<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Door"/>
+	<dcterms:date>2014-07-10T17:04:46.025Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/973de3dd64be4c1eae827e738ea2b247">
+	<skos:prefLabel xml:lang="de">Tastatur</skos:prefLabel>
+	<skos:note xml:lang="de">Tastatur</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Tastatur</skos:definition>
+	<dcterms:date>2014-07-09T16:13:18.254Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+	<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/2b145ec407ac4dc1a3b64e2d70ceaee7">
+	<skos:prefLabel xml:lang="de">Monitor</skos:prefLabel>
+	<skos:note xml:lang="de">Monitor</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Monitor</skos:definition>
+	<dcterms:date>2014-07-09T16:10:55.719Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/980e297c7e694977beee4055605bffaa">
+	<skos:prefLabel xml:lang="de">Kiste</skos:prefLabel>
+	<skos:note xml:lang="de">Kiste</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Kiste</skos:definition>
+	<dcterms:date>2014-07-09T16:12:44.029Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/e24fe80334004d9c871f788a14deab99">
+	<skos:prefLabel xml:lang="de">Jacke</skos:prefLabel>
+	<skos:note xml:lang="de">Jacke</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Jacke</skos:definition>
+	<dcterms:date>2014-07-09T16:13:35.273Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/f0634238d676458fa9fd8ec287cffb9e">
+	<skos:prefLabel xml:lang="de">Stuhl</skos:prefLabel>
+	<skos:note xml:lang="de">Stuhl</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Stuhl</skos:definition>
+	<dcterms:date>2014-07-09T16:11:06.555Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/e47f91f8c0034fab807633526efbf1a3">
+	<skos:prefLabel xml:lang="de">Drucker</skos:prefLabel>
+	<skos:note xml:lang="de">Drucker</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Drucker</skos:definition>
+	<dcterms:date>2014-07-09T16:11:43.752Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/36062f17590741cd99a0dd12047c3e64">
+	<skos:prefLabel xml:lang="de">Blume</skos:prefLabel>
+	<skos:note xml:lang="de">Blume</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Blume</skos:definition>
+	<dcterms:date>2014-07-09T16:12:19.633Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/1debd88b6aa644149f0c1a0b93e284f6">
+	<skos:prefLabel xml:lang="de">Laptop</skos:prefLabel>
+	<skos:note xml:lang="de">Laptop</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Laptop</skos:definition>
+	<dcterms:date>2014-07-09T16:11:17.305Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/dff5d03817c140a7a45fbd34fee873d4">
+	<skos:prefLabel xml:lang="de">Schrank</skos:prefLabel>
+	<skos:note xml:lang="de">Schrank</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Schrank</skos:definition>
+	<dcterms:date>2014-07-09T16:12:08.678Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+<skos:Concept rdf:about="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597/f94e5ce4bbad489a9da8313def8828e4">
+	<skos:prefLabel xml:lang="de">Maus</skos:prefLabel>
+	<skos:note xml:lang="de">Maus</skos:note>
+	<skos:inScheme rdf:resource="http://143.93.114.137/rest/vocabs/8655a5b2a88c4bf6a734c8aa4ab43597"/>
+	<skos:definition xml:lang="de">Maus</skos:definition>
+	<dcterms:date>2014-07-09T16:13:09.228Z</dcterms:date>
+	<dcterms:creator>Gamma</dcterms:creator>
+</skos:Concept>
+
+</rdf:RDF>

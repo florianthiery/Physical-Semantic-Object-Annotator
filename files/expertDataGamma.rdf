@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ns0="http://voc.gammaoffice.de/">
+
+  <rdf:Description rdf:about="http://ibr.spatialhumanities.de/xml/i3mainz/offices/gamma/desks/desk_001">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <ns0:hasItem>
+      <rdf:Description rdf:about="http://ibr.spatialhumanities.de/xml/i3mainz/offices/gamma/computers/computer_strumpf">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <ns0:id>strumpf</ns0:id>
+        <ns0:isConnected>
+          <rdf:Description rdf:about="http://ibr.spatialhumanities.de/xml/i3mainz/offices/gamma/monitors/monitor_01">
+            <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+            <ns0:id>01</ns0:id>
+            <ns0:model>W2242PK</ns0:model>
+          </rdf:Description>
+        </ns0:isConnected>
+
+        <ns0:isConnected>
+          <rdf:Description>
+            <ns0:id>02</ns0:id>
+            <ns0:model>W2242PK</ns0:model>
+          </rdf:Description>
+        </ns0:isConnected>
+
+      </rdf:Description>
+    </ns0:hasItem>
+
+    <ns0:belongsTo>
+      <rdf:Description rdf:about="http://ibr.spatialhumanities.de/xml/i3mainz/staff/staff_unold">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <ns0:name>Martin Unold</ns0:name>
+        <ns0:email>martin.unold@hs-mainz.de</ns0:email>
+        <ns0:position>Wissenschaftlicher Mitarbeiter</ns0:position>
+      </rdf:Description>
+    </ns0:belongsTo>
+
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://ibr.spatialhumanities.de/xml/i3mainz/offices/gamma/desks/desk_005">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <ns0:hasItem>
+      <rdf:Description>
+        <ns0:id>plisken</ns0:id>
+        <ns0:isConnected>
+          <rdf:Description>
+            <ns0:id>09</ns0:id>
+            <ns0:model>W2242PK</ns0:model>
+          </rdf:Description>
+        </ns0:isConnected>
+
+      </rdf:Description>
+    </ns0:hasItem>
+
+    <ns0:hasItem>
+      <rdf:Description rdf:about="http://ibr.spatialhumanities.de/xml/i3mainz/offices/gamma/computers/computer_laptop">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <ns0:id>laptop</ns0:id>
+      </rdf:Description>
+    </ns0:hasItem>
+
+    <ns0:belongsTo>
+      <rdf:Description rdf:about="http://ibr.spatialhumanities.de/xml/i3mainz/staff/staff_thiery">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <ns0:name>Florian Thiery</ns0:name>
+        <ns0:email>florian.thiery@hs-mainz.de</ns0:email>
+        <ns0:position>Wissenschaftlicher Mitarbeiter</ns0:position>
+      </rdf:Description>
+    </ns0:belongsTo>
+
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://ibr.spatialhumanities.de/xml/i3mainz/offices/gamma/cabinets/cabinet_005">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <ns0:hasItem>
+      <rdf:Description>
+        <ns0:id>B0066</ns0:id>
+        <ns0:title>Eignung aktueller Industriekameras für modulare Digitalkameratachymeter</ns0:title>
+        <ns0:type>Bachelor Thesis</ns0:type>
+        <ns0:author>Florian Thiery</ns0:author>
+        <ns0:supervisor>Martin Schülter</ns0:supervisor>
+        <ns0:hasPeriod>
+          <rdf:Description>
+            <ns0:from>14.03.2011</ns0:from>
+            <ns0:until>01.06.2011</ns0:until>
+          </rdf:Description>
+        </ns0:hasPeriod>
+
+      </rdf:Description>
+    </ns0:hasItem>
+
+    <ns0:hasItem>
+      <rdf:Description rdf:about="http://ibr.spatialhumanities.de/xml/i3mainz/books/KM042">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <ns0:id>KM042</ns0:id>
+        <ns0:title>Semantic Web und Linked Data: Generierung von Interoperabilität in archäologischen Fachdaten am Beispiel römischer Töpferstempel</ns0:title>
+        <ns0:type>Master Thesis</ns0:type>
+        <ns0:author>Florian Thiery</ns0:author>
+        <ns0:supervisor>Kai-Christian Bruhn</ns0:supervisor>
+        <ns0:hasPeriod>
+          <rdf:Description>
+            <ns0:from>13.06.2013</ns0:from>
+            <ns0:until>11.12.2013</ns0:until>
+          </rdf:Description>
+        </ns0:hasPeriod>
+
+      </rdf:Description>
+    </ns0:hasItem>
+
+  </rdf:Description>
+
+</rdf:RDF>

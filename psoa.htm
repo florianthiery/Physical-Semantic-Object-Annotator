@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>PSOA - Modi</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/gui.js"></script>
+	<script src="js/global_variables.js"></script>
+</head>
+<body onLoad="GUI.init();">
+	<div class="navbar-inner">
+		<p style="float: right; margin-top: 0.8em"><a id="changelog" href="changelog.htm"></a> | CC BY-SA 4.0 | <a href="http://www.florian-thiery.de" target="_blank">Florian Thiery M.Sc.</a> @ <a href="https://github.com/florianthiery" target="_blank">GitHub</a> | <a href="mailto:florian.thiery@fh-mainz.de">Kontakt</a>
+		</p>
+		<p style="float: left; margin-top: 0.8em"><a href="index.htm">Annotator</a> | <a href="workflow.htm">Anleitung</a> | <a href="datamodel.htm">Datenmodell</a> | <a href="psoa.htm">Dokumentation</a> | <a href="sparql.htm">SPARQL Beispiel</a>  | <a href="sos.htm">Semantic Object Service</a>
+		</p>
+	</div>
+	
+	<h1 class="page-header">PSOA - Modi Dokumentation</h1>
+	
+	<h2>Content</h2>
+	<ul>
+		<li><a href="#grundprinzip">Grundprinzip</a></li>
+		<li><a href="#nso">Neues Semantic Object erstellen</a></li>
+		<li><a href="#so">Semantic Object annotieren</a></li>
+		<li><a href="#feature">Feature annotieren</a></li>
+		<li><a href="#sameAs">Semantic Object Relation erstellen</a></li>
+	</ul>
+	
+	<h2 id="grundprinzip">Grundprinzip</h2>
+	<p align="justify" style="line-height: 160%;">Der <b>Physical Semantic Object Annotator (PSOA)</b> baut auf dem <a href="datamodel.htm">Semantic Object Data Model (SOM)</a> auf. Als Grundelement dient das semantische Objekt (<b>SO</b>). Dies wird durch eine Open Annotation Annotation (inkl. Metadaten) mittels Target und Body beschrieben (<b>A</b>). Zur Identifzierung des semantischen Objekts ist mindestens eine textliche Information n&ouml;tig, das pr&auml;ferierte Label (<b>PL</b>). ein semantisches Objekt ohne prefLabel wird im PSOA nicht angezeigt. Wird eine Annotation mit dem prefLabel gel&ouml;scht, ist das semantische Objekt als ebenfalls gel&ouml;scht anzusehen.</p>
+	<p><center><img src="img/grundprinzip.png"></center></p>
+	
+	<h2 id="nso">Neues Semantic Object erstellen</h2>
+	<p align="justify" style="line-height: 160%;">Existiert kein semantisches Objekt, kann mit PSOA und dem <a href="https://github.com/florianthiery/PhysicalSemanticObjectAnnotator/blob/master/SemanticObjectService.rm" target="_blank">Semantic Object Service</a>
+	ein neues im Web adessierbares semantisches Objekt erzuegt werden. PSOA erm&ouml;glicht die Annotation dieses Objekts in textlicher Weise durch das pr&auml;ferierte Label (<b>PL</b>), ein optionales alternatives Label (<b>AL</b>) und eine optionale Beschreibung (<b>SN</b>). Des Weiteren sind optional die Klassifizierung &uuml;ber ein Label (<b>L</b>), das Hinzuf&uuml;gen weiterer Informationen &uuml;ber Expert Data (<b>ED</b>), sowie weitere Beschreibungen mit Literalen (<b>"..."</b>) bzw. HTTP Resourcen (<b>http://...</b>) m&ouml;glich.</p>
+	<p><center><img src="img/nso.png"></center></p> 
+	
+	<h2 id="so">Semantic Object annotieren</h2>
+	<p align="justify" style="line-height: 160%;">Besteht bereits ein semantisches Objekt, kann dies erneut vom gleichen oder einem anderen Annotator annotiert werden. Hierbei dient das Target als verbindendes Element.</p>
+	<center><img src="img/soa.png"></center></p>
+	
+	<h2 id="feature">Feature annotieren</h2>
+	<p align="justify" style="line-height: 160%;">Der <b>Physical Semantic Object Annotator (PSOA)</b> ist prim&auml;r f&uuml;r die Annotation von bereits bestehenden Feature Geometrien des Projekts IBR (Inschriften im Bezugssystem des Raumes) konzipiert. Hierbei m&uuml;ssen die Geometrien annotiert und zuvor ein semantisches Objekt erstellt werden. Hierzu wird ebenfalls der Semantic Object Service genutzt. Nach Auswahl einer bestehenden Feature Geometrie wird automatisch ein semantisches Objekt erstellt, welches annotiert werden kann, vgl. "Neues semantisches Objekt erstellen". Wichtig hierbei ist, dass eine beschreibende Geometrie (das Feature), wie auch das prefLabel nicht optional ist.</p>
+	<p><p><center><img src="img/fa.png"></center></p>
+	
+	<h2 id="sameAs">Semantic Object Relation erstellen</h2>
+	<p align="justify" style="line-height: 160%;">Eine semantische Relation zwischen zwei semantischen Objekten wird ebenfalls durch eine Annotation beschrieben. Diese ist jedoch body-los. Das gew&auml;hlte Pr&auml;dikat der Beschreibung der Relation wird in beide Richtungen gleich verwendet. Somit ist eine vereinfachte Abfrage m&ouml;glich.</p>
+	<p><center><img src="img/relation.png"></center></p>
+
+</body>
+</html>

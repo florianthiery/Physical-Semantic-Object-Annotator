@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+		 xmlns:gamma="http://thegamma.com/">
+
+  <rdfs:Resource rdf:about="http://thegamma.com/Eingangstuer">
+    <rdfs:label>a</rdfs:label>
+	<rdfs:comment>a</rdfs:comment>
+	<rdfs:seeAlso>a</rdfs:seeAlso>
+  </rdfs:Resource>
+  
+  <rdfs:Resource rdf:about="http://thegamma.com/Lampe1">
+    <rdfs:label>b</rdfs:label>
+	<rdfs:comment>b</rdfs:comment>
+	<rdfs:seeAlso>b</rdfs:seeAlso>
+  </rdfs:Resource>
+
+</rdf:RDF>
